@@ -2,3 +2,7 @@
 Thumbs.db
 .env
 .env.*
+*.mov
+*.MOV
+completeProj.md
+removedArea/

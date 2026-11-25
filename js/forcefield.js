@@ -8,14 +8,16 @@
   if (!host || typeof p5 === 'undefined') return;
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
+  const COARSE = matchMedia('(pointer: coarse)').matches;
+
   const CFG = {
-    hue: 255,
-    saturation: 72,
+    hue: 42,
+    saturation: 48,
     threshold: 255,
     minStroke: 2,
     maxStroke: 5,
-    spacing: 12,
-    density: 1.6,
+    spacing: COARSE ? 16 : 12,   // fewer points on phones = smoother
+    density: COARSE ? 1.2 : 1.6,
     invertImage: true,
     invertWireframe: true,
     magnifierRadius: 140,
@@ -80,7 +82,17 @@
       }
     }
 
+    function readField() {
+      const cs = getComputedStyle(document.documentElement);
+      const hue = parseFloat(cs.getPropertyValue('--ff-hue'));
+      const sat = parseFloat(cs.getPropertyValue('--ff-sat'));
+      if (!Number.isNaN(hue)) CFG.hue = hue;
+      if (!Number.isNaN(sat)) CFG.saturation = sat;
+      return (cs.getPropertyValue('--ff-bg') || '#050508').trim();
+    }
+
     function generatePalette() {
+      readField();
       palette = [];
       p.push();
       p.colorMode(p.HSL);
@@ -148,6 +160,7 @@
       lastW = w;
       lastH = h;
       p.pixelDensity(1);
+      p.frameRate(COARSE ? 30 : 60);   // keep phones cool
 
       p.loadImage(
         IMAGE_URL,
@@ -164,7 +177,8 @@
 
     p.windowResized = () => {
       const { w, h } = size();
-      if (w === lastW && h === lastH) return;
+      // phones fire resize when the URL bar hides/shows – ignore tiny height-only changes
+      if (w === lastW && Math.abs(h - lastH) < 140) return;
       lastW = w;
       lastH = h;
       p.resizeCanvas(w, h);
@@ -179,13 +193,18 @@
         return;
       }
 
+      const prevHue = CFG.hue;
+      const prevSat = CFG.saturation;
+      const fieldBg = readField();
+      if (!palette.length || prevHue !== CFG.hue || prevSat !== CFG.saturation) generatePalette();
+
       if (!ready || !img) {
-        p.background(5, 5, 8);
+        p.background(fieldBg);
         syncMirror();
         return;
       }
 
-      p.background(5, 5, 8);
+      p.background(fieldBg);
 
       magnifierX = p.lerp(magnifierX, pointerX, 0.12);
       magnifierY = p.lerp(magnifierY, pointerY, 0.12);

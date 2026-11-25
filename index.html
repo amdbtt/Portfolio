@@ -1,327 +1,343 @@
 <!doctype html>
 <html lang="en" data-theme="dark">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#0B0B10">
-<title>Muhammad Ahmad · Computer Scientist, eCommerce &amp; AI</title>
-<meta name="description" content="Stores that sell, apps that work and models that see.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <title>Muhammad Ahmad · Computer Scientist, eCommerce &amp; AI</title>
+  <meta name="description" content="Stores that sell, apps that work and models that see.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=portrait6">
 </head>
+
 <body>
-<a class="skip" href="#main">Skip to content</a>
+  <a class="skip" href="#main">Skip to content</a>
 
-<!-- ============ NAV ============ -->
-<div class="nav-wrap" id="navwrap" aria-hidden="true">
-  <nav class="nav">
-    <a class="logo" href="#top" aria-label="muhammad ahmad">
-      <span class="logo-mark"><i>M</i><b></b></span>
-      <span class="logo-text">muhammad<em>ahmad</em></span>
-    </a>
-    <div class="links" id="links">
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#projects">Projects</a>
-      <a href="#journey">Journey</a>
-      <a href="#skills">Skills</a>
-      <a class="only-mobile" href="#contact">Get in touch</a>
-    </div>
-    <div class="nav-r">
-      <button class="theme" id="theme" aria-label="Toggle light / dark theme">
-        <svg class="sun" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19"/></svg>
-        <span class="knob"></span>
-      </button>
-      <a class="btn-cream hide-sm" href="#contact">Get in touch <span class="arr"></span></a>
-      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span></button>
-    </div>
-  </nav>
-</div>
+  <!-- ============ NAV ============ -->
+  <div class="nav-wrap" id="navwrap" aria-hidden="true">
+    <nav class="nav">
+      <a class="logo" href="#top" aria-label="muhammad ahmad">
+        <span class="logo-mark"><i>M</i><b></b></span>
+        <span class="logo-text">muhammad<em>ahmad</em></span>
+      </a>
+      <div class="links" id="links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#journey">Journey</a>
+        <a href="#skills">Skills</a>
+        <a class="only-mobile" href="#contact">Get in touch</a>
+      </div>
+      <div class="nav-r">
+        <button class="theme" id="theme" aria-label="Toggle light / dark theme">
+          <svg class="sun" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor"
+            stroke-width="1.8" stroke-linecap="round">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19" />
+          </svg>
+          <span class="knob"></span>
+        </button>
+        <a class="btn-cream hide-sm" href="#contact">Get in touch <span class="arr"></span></a>
+        <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="links"><span></span><span></span></button>
+      </div>
+    </nav>
+  </div>
 
-<main id="main">
+  <main id="main">
 
-<!-- Scroll fuel for the door; hero stays fixed over the viewport while this plays -->
-<div class="stage-pin" id="stagePin" aria-hidden="true"></div>
+    <!-- Scroll fuel for the door; hero stays fixed over the viewport while this plays -->
+    <div class="stage-pin" id="stagePin" aria-hidden="true"></div>
 
-<!-- ============ STAGE: door opens onto hero (fixed, then settles) ============ -->
-<section class="stage" id="stage">
-  <div class="stage-frame" id="stageFrame">
+    <!-- ============ STAGE: door opens onto hero (fixed, then settles) ============ -->
+    <section class="stage" id="stage">
+      <div class="stage-frame" id="stageFrame">
 
-    <header class="hero" id="top">
-      <div class="hero-zoom">
-        <div class="hero-field" aria-hidden="true">
-          <div class="portal-media" data-slot="hero-field"></div>
-          <div class="portal-duotone"></div>
-          <span class="portal-dot portal-dot--a"></span>
-          <span class="portal-dot portal-dot--b"></span>
-        </div>
-
-        <div class="hero-ui">
-          <div class="fl" style="left:2%;top:25%" data-depth="22"><span class="chip c1"><i class="ci" style="color:#8B6CFF">W</i>WordPress</span></div>
-          <div class="fl" style="right:2%;top:21%" data-depth="-24"><span class="chip c3"><i class="ci" style="color:#4FD1E8">S</i>Shopify</span></div>
-          <div class="fl" style="left:5%;top:51%" data-depth="-18"><span class="chip c4"><i class="ci" style="color:#4FD1E8">◈</i>eBay · Etsy</span></div>
-          <div class="fl" style="right:3%;top:50%" data-depth="26"><span class="chip c5"><i class="ci" style="color:#FF7A50">◉</i>Machine learning</span></div>
-
-          <div class="wrap hero-main">
-            <div class="name" aria-label="Muhammad Ahmad">
-              <span class="nbox" data-letters="name">muhammad</span>
-              <span class="portrait">
-                <span class="ph" data-slot="hero-portrait">
-                  <svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg>
-                  <b>Your photo</b>
-                </span>
-              </span>
-              <span class="nital" data-letters="name">ahmad</span>
+        <header class="hero" id="top">
+          <div class="hero-zoom">
+            <div class="hero-field" aria-hidden="true">
+              <div class="portal-media" data-slot="hero-field"></div>
+              <div class="shader-bg" id="shaderBg"></div>
+              <div class="portal-duotone"></div>
+              <span class="portal-dot portal-dot--a"></span>
+              <span class="portal-dot portal-dot--b"></span>
             </div>
 
-            <div class="hero-bottom">
-              <h1 data-letters="soft">Stores that sell, apps that work <span class="dim">and</span> <em>models that see</em>.</h1>
-              <div class="hero-side">
-                <p>I build WordPress and Shopify stores, manage eBay and Etsy listings, and ship mobile apps and deep-learning research. Computer Science graduate, class of 2026.</p>
-                <div class="cta">
-                  <a class="btn-cream" href="mailto:laibajay21@gmail.com">Email me <span class="arr"></span></a>
-                  <a class="btn-ghost" href="#projects">See my work</a>
+            <div class="hero-ui">
+              <div class="wrap hero-main">
+                <div class="name" aria-label="Muhammad Ahmad">
+                  <span class="nbox" data-letters="name">muhammad</span>
+                  <span class="portrait">
+                    <span class="ph" data-slot="hero-portrait">
+                      <img src="assets/myImage/pic.png" alt="Muhammad Ahmad">
+                    </span>
+                  </span>
+                  <span class="nital" data-letters="name">ahmad</span>
+                </div>
+
+                <div class="hero-bottom">
+                  <h1 data-letters="soft">Ideas that think, <span class="dim">products that scale</span> and <em>systems
+                      that deliver</em>.</h1>
+                  <div class="hero-side">
+                    <p>With <b>2+</b> year in industry. I turn complex ideas into intelligent digital products building
+                      Agentic AI systems, scalable web platforms, and high performance mobile experiences that solve
+                      real-world problems.</p>
+                    <a class="btn-cream" href="mailto:ahmd.bt35@gmail.com">Email me <span class="arr"></span></a>
+                    <a class="btn-ghost" href="#projects">See my work</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="hero-foot">
+                <ul class="facts">
+                  <li><svg viewBox="0 0 24 24">
+                      <path d="M2 9l10-5 10 5-10 5L2 9z" />
+                      <path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5" />
+                    </svg>BS Computer Science, GIFT University</li>
+                  <li><svg viewBox="0 0 24 24">
+                      <circle cx="12" cy="9" r="6" />
+                      <path d="M8.5 14L7 22l5-3 5 3-1.5-8" />
+                    </svg>Harvard HSIL Hackathon 2026</li>
+                  <li><svg viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="3" />
+                      <circle cx="5" cy="6" r="2" />
+                      <circle cx="19" cy="6" r="2" />
+                      <circle cx="5" cy="18" r="2" />
+                      <circle cx="19" cy="18" r="2" />
+                      <path d="M7 7l3 3M17 7l-3 3M7 17l3-3M17 17l-3-3" />
+                    </svg>BMRF-Net research</li>
+                </ul>
+                <a class="scroll" href="#about">Scroll<i></i></a>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div class="gate" id="gate" aria-label="Welcome">
+          <div class="gate-door gate-door--l">
+            <div class="gate-fx" id="gateFx" aria-hidden="true"></div>
+          </div>
+          <div class="gate-door gate-door--r">
+            <canvas class="gate-fx-mirror" id="gateFxMirror" aria-hidden="true"></canvas>
+          </div>
+          <div class="gate-center">
+            <p class="gate-label">Welcome</p>
+            <h1 class="gate-mark" aria-label="Muhammad Ahmad">
+              <span class="gate-half gate-half--a">muhammad</span><span class="gate-half gate-half--b">ahmad</span>
+            </h1>
+            <p class="gate-hint">Scroll to open</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="m-track" id="mTrack"></div>
+    </div>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="about">
+      <div class="wrap">
+        <p class="statement" id="statement">I turn ideas into practical digital products: intelligent AI systems,
+          scalable web platforms, mobile applications, and business solutions built to solve real world problems. From
+          Agentic AI and automation to full-stack development, I build software that is designed to work, scale, and
+          deliver value.</p>
+
+        <div class="stats rv">
+          <div><span>Years of Computer Science</span><b data-n="4">0</b></div>
+          <div><span>Courses graded A- to A+</span><b data-n="18">0</b></div>
+          <div><span>Projects built</span><b data-n="15" data-s="+">0</b></div>
+          <div><span>Tools in daily use</span><b data-n="20" data-s="+">0</b></div>
+        </div>
+      </div>
+
+      <div class="tech" aria-hidden="true">
+        <div class="t-track" id="tTrack"></div>
+      </div>
+    </section>
+
+    <!-- ============ AI / FULL-STACK FLOW ============ -->
+    <section class="flow" id="flow">
+      <div class="wrap center">
+        <h2 class="rv" style="--d:.05s">From agentic AI to <em>production apps</em>, in one connected stack.</h2>
+
+        <div class="mock-wrap rv" style="--d:.1s">
+          <div class="mock" id="mock">
+            <div class="m-bar">
+              <div class="dots"><i></i><i></i><i></i></div>
+              <div class="url"><span class="l">M</span>agent-studio.dev/<b>pipeline</b></div>
+              <span class="ex"><i></i>Example view</span>
+            </div>
+
+            <!-- view 1: AI capability board -->
+            <div class="view on" data-view="0">
+              <div class="banner">
+                <div><small>Live capability</small><b>Agentic AI workflows</b><span class="shop-btn">Run agent</span></div>
+                <div class="ph ban" data-slot="store-banner"><svg viewBox="0 0 24 24">
+                    <rect x="3" y="4" width="18" height="16" rx="2" />
+                    <circle cx="9" cy="10" r="2" />
+                    <path d="m21 16-5-5-8 8" />
+                  </svg></div>
+              </div>
+              <div class="products" id="products"></div>
+              <div class="toast" id="toast"><i>✓</i>Agent task completed</div>
+            </div>
+
+            <!-- view 2: impact metrics -->
+            <div class="view" data-view="1">
+              <div class="dash">
+                <div class="kpi"><span>LeetCode solved</span><b data-n="428" id="k1">428</b>
+                  <div class="spark"><i style="--h:30%"></i><i style="--h:48%"></i><i style="--h:38%"></i><i
+                      style="--h:62%"></i><i style="--h:54%"></i><i style="--h:78%"></i><i style="--h:92%"></i></div>
+                </div>
+                <div class="kpi"><span>Ship velocity</span><b id="k2">2.4×</b>
+                  <div class="spark"><i style="--h:40%"></i><i style="--h:44%"></i><i style="--h:58%"></i><i
+                      style="--h:52%"></i><i style="--h:66%"></i><i style="--h:72%"></i><i style="--h:80%"></i></div>
+                </div>
+                <div class="kpi"><span>APIs in production</span><b id="k3">36</b>
+                  <div class="spark"><i style="--h:22%"></i><i style="--h:36%"></i><i style="--h:50%"></i><i
+                      style="--h:60%"></i><i style="--h:70%"></i><i style="--h:84%"></i><i style="--h:96%"></i></div>
                 </div>
               </div>
             </div>
 
-            <div class="hero-foot">
-              <ul class="facts">
-                <li><svg viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5L2 9z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>BS Computer Science, GIFT University</li>
-                <li><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/></svg>Harvard HSIL Hackathon 2026</li>
-                <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="M7 7l3 3M17 7l-3 3M7 17l3-3M17 17l-3-3"/></svg>BMRF-Net research</li>
-              </ul>
-              <a class="scroll" href="#about">Scroll<i></i></a>
+            <!-- view 3: stack sync -->
+            <div class="view" data-view="2">
+              <div class="sync">
+                <div class="hub"><span class="l">M</span>Stack</div>
+                <div class="chs">
+                  <span><i class="ok">✓</i>LangChain</span>
+                  <span><i class="ok">✓</i>LangGraph</span>
+                  <span><i class="ok">✓</i>FastAPI</span>
+                  <span><i class="ok">✓</i>Docker</span>
+                </div>
+                <p class="syncing"><i>⟳</i>Agents, APIs and apps in sync</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </header>
 
-    <div class="gate" id="gate" aria-label="Welcome">
-      <div class="gate-door gate-door--l">
-        <div class="gate-fx" id="gateFx" aria-hidden="true"></div>
-      </div>
-      <div class="gate-door gate-door--r">
-        <canvas class="gate-fx-mirror" id="gateFxMirror" aria-hidden="true"></canvas>
-      </div>
-      <div class="gate-center">
-        <p class="gate-label">Welcome</p>
-        <h1 class="gate-mark" aria-label="Muhammad Ahmad">
-          <span class="gate-half gate-half--a">muhammad</span><span class="gate-half gate-half--b">ahmad</span>
-        </h1>
-        <p class="gate-hint">Scroll to open</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ============ MARQUEE ============ -->
-<div class="marquee" aria-hidden="true"><div class="m-track" id="mTrack"></div></div>
-
-<!-- ============ ABOUT ============ -->
-<section id="about" class="about">
-  <div class="wrap">
-    <span class="label rv">Who I am</span>
-    <p class="statement" id="statement">I turn ideas into things people can use: online stores that are easy to run, marketplace listings that get found, mobile apps that feel simple, and research that teaches a computer to find exactly what a sentence describes inside an image.</p>
-
-    <div class="stats rv">
-      <div><span>Years of Computer Science</span><b data-n="4">0</b></div>
-      <div><span>Courses graded A- to A+</span><b data-n="18">0</b></div>
-      <div><span>Projects built</span><b data-n="6">0</b></div>
-      <div><span>Tools in daily use</span><b data-n="20" data-s="+">0</b></div>
-    </div>
-
-    <div class="about-grid">
-      <div class="a-photo rv">
-        <div class="ph big" data-slot="about-portrait">
-          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-8 8"/></svg>
-          <b>Your photo here</b>
+        <div class="steps" id="steps">
+          <button class="step on"><i class="bar"></i><em>01</em><b>Design the AI agents</b></button>
+          <button class="step"><i class="bar"></i><em>02</em><b>Measure real impact</b></button>
+          <button class="step"><i class="bar"></i><em>03</em><b>Ship the full stack</b></button>
         </div>
-        <span class="mini m1"><i class="ci" style="color:#4FD1E8">S</i>Shopify</span>
-        <span class="mini m2"><i class="ci" style="color:#4788FB">Py</i>Python</span>
-        <span class="mini m3"><i class="ci" style="color:#4FD1E8">F</i>Flutter</span>
-        <span class="status in-photo"><i class="live"></i>Open to remote roles, MS and research</span>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <!-- Services section archived at /removedArea/ -->
+
+    <section id="projects" class="projects">
+      <div class="wrap center">
+        <h2 class="rv" style="--d:.05s">A selection of projects I’ve <em>built</em> and worked on.</h2>
       </div>
 
-      <div class="a-info">
-        <div class="kv-grid">
-          <div class="kv rv"><span>Degree</span><b>BS (Hons) Computer Science</b></div>
-          <div class="kv rv" style="--d:.06s"><span>University</span><b>GIFT University, 2022 – 2026</b></div>
-          <div class="kv rv" style="--d:.12s"><span>CGPA</span><b>3.35 / 4.00</b></div>
-          <div class="kv rv" style="--d:.18s"><span>Focus</span><b>eCommerce, AI and mobile apps</b></div>
-        </div>
-        <h4 class="caps rv">Also good at</h4>
-        <ul class="pills rv">
-          <li>Presentations &amp; seminars</li><li>Public speaking</li><li>Student mentoring</li><li>Lab assistance</li><li>Research writing</li><li>Teamwork</li>
-        </ul>
-        <a class="btn-cream rv" href="mailto:laibajay21@gmail.com">laibajay21@gmail.com <span class="arr"></span></a>
-      </div>
-    </div>
-  </div>
-
-  <div class="tech" aria-hidden="true"><div class="t-track" id="tTrack"></div></div>
-</section>
-
-<!-- ============ ECOMMERCE FLOW ============ -->
-<section class="flow" id="flow">
-  <div class="wrap center">
-    <span class="label rv">eCommerce work</span>
-    <h2 class="rv" style="--d:.05s">From product listing to <em>live store</em>, in one connected flow.</h2>
-
-    <div class="mock-wrap rv" style="--d:.1s">
-      <div class="mock" id="mock">
-        <div class="m-bar">
-          <div class="dots"><i></i><i></i><i></i></div>
-          <div class="url"><span class="l">M</span>demo-store.shop/<b>storefront</b></div>
-          <span class="ex"><i></i>Example view</span>
-        </div>
-
-        <!-- view 1: storefront -->
-        <div class="view on" data-view="0">
-          <div class="banner">
-            <div><small>New collection</small><b>Everyday essentials</b><span class="shop-btn">Shop now</span></div>
-            <div class="ph ban" data-slot="store-banner"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-8 8"/></svg></div>
-          </div>
-          <div class="products" id="products"></div>
-          <div class="toast" id="toast"><i>✓</i>Added to basket</div>
-        </div>
-
-        <!-- view 2: numbers -->
-        <div class="view" data-view="1">
-          <div class="dash">
-            <div class="kpi"><span>Orders this month</span><b data-n="312" id="k1">312</b><div class="spark"><i style="--h:30%"></i><i style="--h:48%"></i><i style="--h:38%"></i><i style="--h:62%"></i><i style="--h:54%"></i><i style="--h:78%"></i><i style="--h:92%"></i></div></div>
-            <div class="kpi"><span>Conversion</span><b id="k2">3.9%</b><div class="spark"><i style="--h:40%"></i><i style="--h:44%"></i><i style="--h:58%"></i><i style="--h:52%"></i><i style="--h:66%"></i><i style="--h:72%"></i><i style="--h:80%"></i></div></div>
-            <div class="kpi"><span>Listings live</span><b id="k3">148</b><div class="spark"><i style="--h:22%"></i><i style="--h:36%"></i><i style="--h:50%"></i><i style="--h:60%"></i><i style="--h:70%"></i><i style="--h:84%"></i><i style="--h:96%"></i></div></div>
-          </div>
-        </div>
-
-        <!-- view 3: sync -->
-        <div class="view" data-view="2">
-          <div class="sync">
-            <div class="hub"><span class="l">M</span>Store</div>
-            <div class="chs">
-              <span><i class="ok">✓</i>Shopify</span>
-              <span><i class="ok">✓</i>WooCommerce</span>
-              <span><i class="ok">✓</i>eBay</span>
-              <span><i class="ok">✓</i>Etsy</span>
+      <div class="highlights">
+        <div class="hl-track" id="hlTrack">
+          <div class="hl-sticky">
+            <div class="wrap hl-head">
+              <div>
+                <h3 class="rv" style="--d:.05s">Work that <em>stands out</em>.</h3>
+              </div>
+              <div class="hl-ctrl rv" style="--d:.1s">
+                <span class="hl-count" id="hlCount">1 / 3</span>
+                <button type="button" class="hl-arrow" id="hlPrev" aria-label="Previous highlight">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+                </button>
+                <button type="button" class="hl-arrow" id="hlNext" aria-label="Next highlight">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                </button>
+              </div>
             </div>
-            <p class="syncing"><i>⟳</i>Listings in sync</p>
+
+            <div class="hl-rail" id="hlRail" tabindex="0" aria-label="Highlighted projects"></div>
+
+            <div class="wrap">
+              <div class="hl-progress" aria-hidden="true"><i id="hlBar"></i></div>
+            </div>
           </div>
         </div>
+
+      </div>
+
+      <div class="wrap">
+        <div id="projList" class="proj-sticky-stack"></div>
+      </div>
+    </section>
+
+    <!-- ============ JOURNEY ============ -->
+    <section id="journey" class="journey">
+      <div class="wrap">
+        <h2 class="rv" style="--d:.05s">Professional <em>experience</em>.</h2>
+        <div class="tl" id="tl"><span class="tl-line"><i id="tlFill"></i></span></div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills" class="skills">
+      <div class="wrap center">
+        <h2 class="rv" style="--d:.05s">Where I build, think, and <em>ship.</em></h2>
+      </div>
+      <div class="wrap sk-grid" id="skGrid"></div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER / CONTACT ============ -->
+  <footer class="site" id="contact">
+    <div class="wrap f-grid">
+      <div class="f-brand">
+        <a class="f-logo" href="#top">muhammad<em>ahmad</em><i>.</i></a>
+        <p class="f-bio">Agentic AI engineer and full-stack developer building intelligent workflows, web platforms, and mobile apps that ship.</p>
+      </div>
+
+      <nav class="f-col" aria-label="Sitemap">
+        <h4>Sitemap</h4>
+        <a href="#flow">What I do</a>
+        <a href="#projects">Work</a>
+        <a href="#skills">Skills</a>
+        <a href="#journey">Experience</a>
+        <a href="mailto:ahmd.bt35@gmail.com">Hire me</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <nav class="f-col" aria-label="Elsewhere">
+        <h4>Elsewhere</h4>
+        <a href="https://github.com/amdbtt" target="_blank" rel="noopener">GitHub<span class="f-ext" aria-hidden="true">↗</span></a>
+        <a href="https://www.linkedin.com/in/ahmad-qq3/" target="_blank" rel="noopener">LinkedIn<span class="f-ext" aria-hidden="true">↗</span></a>
+        <a href="https://api.whatsapp.com/send?phone=923071686603" target="_blank" rel="noopener noreferrer">WhatsApp<span class="f-ext" aria-hidden="true">↗</span></a>
+      </nav>
+
+      <div class="f-col f-contact">
+        <h4>Contact</h4>
+        <a href="mailto:ahmd.bt35@gmail.com">ahmd.bt35@gmail.com</a>
+        <a href="tel:+923071686603">03071686603</a>
+        <span>Pakistan</span>
+        <span id="fClock">— GMT+5</span>
+        <span>Replies within 24h</span>
       </div>
     </div>
 
-    <div class="steps" id="steps">
-      <button class="step on"><i class="bar"></i><em>01</em><b>Build the storefront</b></button>
-      <button class="step"><i class="bar"></i><em>02</em><b>Watch the numbers</b></button>
-      <button class="step"><i class="bar"></i><em>03</em><b>Sync every channel</b></button>
+    <div class="wrap f-bar">
+      <p>© 2024 Muhammad Ahmad · Software Engineer · Full-Stack &amp; AI</p>
+      <a class="f-topbtn" href="#top">Back to top</a>
     </div>
-  </div>
-</section>
+  </footer>
 
-<!-- ============ SERVICES ============ -->
-<section id="services" class="services">
-  <div class="wrap svc-head">
-    <div>
-      <span class="label rv">What I do</span>
-      <h2 class="rv" style="--d:.05s">Ten skills. <em>One</em> careful builder.</h2>
-    </div>
-    <div class="r rv" style="--d:.1s">
-      <p>Stores, marketplaces, apps and AI: pick one, or combine them into a single piece of work I own from start to finish.</p>
-      <div class="pbar"><i id="svcBar"></i></div>
-    </div>
-  </div>
-  <div class="svc-track" id="svcTrack"></div>
-  <div class="wrap svc-ctrl"><button id="svcPrev" aria-label="Previous"><span class="arr rot"></span></button><button id="svcNext" aria-label="Next"><span class="arr"></span></button></div>
-</section>
-
-<!-- ============ PROJECTS ============ -->
-<section id="projects" class="projects">
-  <div class="wrap center">
-    <span class="label rv">Projects</span>
-    <h2 class="rv" style="--d:.05s">Six things I have <em>built</em> and run.</h2>
-    <p class="sub rv" style="--d:.1s">Research, a small business, two mobile apps, a game and a database system.</p>
-  </div>
-  <div class="wrap" id="projList"></div>
-</section>
-
-<!-- ============ JOURNEY ============ -->
-<section id="journey" class="journey">
-  <div class="wrap">
-    <span class="label rv">Journey</span>
-    <h2 class="rv" style="--d:.05s">From A+ in science to <em>machine vision</em>.</h2>
-    <div class="tl" id="tl"><span class="tl-line"><i id="tlFill"></i></span></div>
-  </div>
-</section>
-
-<!-- ============ SKILLS ============ -->
-<section id="skills" class="skills">
-  <div class="wrap center">
-    <span class="label rv">Skills &amp; tools</span>
-    <h2 class="rv" style="--d:.05s">The tools I <em>reach for</em> every day.</h2>
-  </div>
-  <div class="wrap sk-grid" id="skGrid"></div>
-</section>
-
-<!-- ============ RECOGNITION ============ -->
-<section class="recog" id="recognition">
-  <div class="wrap">
-    <span class="label rv">Recognition</span>
-    <h2 class="rv" style="--d:.05s">In other people’s <em>words</em>.</h2>
-    <div class="rec-grid">
-      <figure class="cert rv">
-        <div class="ph cert-ph" data-slot="certificate">
-          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-8 8"/></svg>
-          <b>Certificate image here</b>
-        </div>
-        <figcaption><b>Harvard HSIL Hackathon</b>Harvard T.H. Chan School of Public Health · GIFT University · 15–16 April 2026</figcaption>
-      </figure>
-      <div class="quotes">
-        <blockquote class="q tone-purple rv"><span class="qm">“</span><p>Ahmad showed strong research ability and problem-solving skills. He was able to apply theoretical concepts to practical implementation effectively.</p><footer><b>Umar Ramzan</b>Lecturer &amp; FYP Supervisor, Computer Science, GIFT University</footer></blockquote>
-        <blockquote class="q tone-teal rv" style="--d:.08s"><span class="qm">“</span><p>He always achieved excellent grade A in quiz, tests and end-term examinations. He has focused his interest on developing both qualitative and quantitative research skills.</p><footer><b>Prof. Dr. Habib Ahmad</b>Department of Mathematics, GIFT University</footer></blockquote>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CONTACT ============ -->
-<section class="contact" id="contact">
-  <div class="wrap">
-    <div class="cbox rv">
-      <span class="label">Contact</span>
-      <h2>Let’s build something <em>together</em>.</h2>
-      <p>Open to remote roles, freelance store work, MS admissions and research assistantships. Email is the fastest way to reach me.</p>
-      <a class="mailbig" href="mailto:laibajay21@gmail.com">laibajay21@gmail.com</a>
-      <div class="cta c">
-        <a class="btn-cream" href="mailto:laibajay21@gmail.com">Write an email <span class="arr"></span></a>
-        <button class="btn-ghost" id="copy"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 012-2h9"/></svg><span>Copy email</span></button>
-        <a class="btn-ghost" href="https://www.linkedin.com/in/laiba-jabeen-98457031b/" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<!-- ============ FOOTER ============ -->
-<footer class="site">
-  <div class="wrap">
-    <div class="f-top">
-      <h3>Have a project in mind?</h3>
-      <a class="btn-cream" href="mailto:laibajay21@gmail.com">Start a conversation <span class="arr"></span></a>
-    </div>
-    <div class="f-mid"><span>© 2026 Muhammad Ahmad · <a href="mailto:laibajay21@gmail.com">laibajay21@gmail.com</a></span></div>
-  </div>
-  <div class="wm" aria-hidden="true"><b>muhammad</b><em>ahmad</em></div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
-<script src="js/data.js"></script>
-<script src="js/main.js"></script>
-<script src="js/forcefield.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/shader.js?v=shader4"></script>
+  <script src="js/data.js?v=camowild1"></script>
+  <script src="js/main.js?v=door5"></script>
+  <script src="js/highlights.js?v=camowild-phone1"></script>
+  <script src="js/forcefield.js?v=mobile1"></script>
+  <script src="js/cursor.js?v=mobile1"></script>
 </body>
+
 </html>

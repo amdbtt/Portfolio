@@ -2,9 +2,11 @@
    Content data – edit text here, the page re-renders from it
    ========================================================= */
 window.DATA = {
-  email: 'laibajay21@gmail.com',
+  email: 'ahmd.bt35@gmail.com',
+  phone: '03071686603',
+  linkedin: 'https://www.linkedin.com/in/ahmad-qq3/',
 
-  marquee: ['WordPress','Shopify','WooCommerce','eBay','Etsy','Machine Learning','Flutter','Python','Claude AI','Unity 3D','React Native','SQL'],
+  marquee: ['Python','LangChain','LangGraph','React','TypeScript','Node.js','Next.js','FastAPI','PostgreSQL','Docker','AWS','React Native'],
 
   tech: [
     ['W','sq'],['Woo','sq'],['S','sq'],['E','sf'],['ebay','sf'],['php','sq'],['SQL','sq'],['JS','sq'],['5','sq'],['CSS','sq'],['⚛','sf'],['Py','sq'],['F','sq'],['C#','sq'],['Fig','sq']
@@ -41,50 +43,93 @@ window.DATA = {
   tones: ['purple','teal','brown','cream'],
 
   projects: [
-    { cat:'Research · Deep Learning', t:'BMRF-Net', tag:'Research', tone:'purple',
+    { highlight:true, cat:'React Native · Computer Vision', t:'CamoWild', tag:'Highlight', tone:'teal',
+      d:'A React Native CLI mobile app for camouflaged object detection in the wild. Python vision pipelines with OpenCV, PyTorch and YOLO spot hidden animals in complex scenes, while Pinecone powers similarity search over detection embeddings.',
+      b:['Camouflaged object detection with confidence overlays and binary masks','Real-time analytics for scans, detections, accuracy and reports','Pinecone-backed retrieval over vision embeddings','Subscription flows for Basic and Pro detection plans'],
+      s:['Python','React Native CLI','Computer Vision','OpenCV','PyTorch','YOLO','Pinecone'],
+      img:'assets/highlights/camowild/1.jpg' },
+    { highlight:true, cat:'Full Stack 3D AI Platform', t:'MetaBread', tag:'Highlight', tone:'purple',
+      d:'A dual company 3D processing platform for point clouds and geospatial assets. Computer vision with Detectron2 and LangGraph workflows in Python, a React frontend, Django APIs, and PostgreSQL with pgVector. Built for autonomous vehicles, AR/VR, robotics and geospatial AI.',
+      groups:[
+        { h:'Vision and AI', items:['Detectron2 computer vision pipelines in Python','LangGraph workflows for multi step processing','pgVector search over geospatial and 3D asset embeddings'] },
+        { h:'Product stack', items:['React frontend for dashboards and 3D review','Django APIs for processing jobs and company workflows','PostgreSQL for durable storage and retrieval'] },
+        { h:'Other highlights', items:['3D asset handling with upload, versioning and global search','Built for autonomous vehicles, AR/VR, robotics and geospatial AI'] }
+      ],
+      s:['Python','Computer Vision','LangGraph','Detectron2','React','Django','PostgreSQL','pgVector'],
+      img:'assets/projects/metabread/images/dashboard.jpg',
+      video:'assets/videos/metabread/demo.mp4',
+      poster:'assets/projects/metabread/images/dashboard.jpg' },
+    { highlight:true, cat:'AI Medical Imaging', t:'NeuroScan Brain Tumor MRI Classifier', tag:'Highlight', tone:'teal',
+      d:'A diagnostic workstation that classifies brain MRI scans with a VGG16 model and returns tumor type probabilities with confidence and risk tags. When a disease or cancer signal is found, a LangGraph chatbot uses Google location GPS to suggest the best hospitals nearby or at a place the user chooses.',
+      b:['Classifies meningioma, glioma, pituitary and no tumor cases','CPU inference with vectorised NumPy preprocessing','LangGraph chatbot that recommends hospitals with Google location GPS','Nearest hospital results or a location the user selects'],
+      s:['Python','VGG16','NumPy','MRI','LangGraph','Google Maps'],
+      img:'assets/highlights/neuroscan/1.jpg',
+      url:'https://github.com/amdbtt/NeuroScan' },
+    { highlight:true, cat:'Vue.js · Property platform', t:'RentInc', tag:'Highlight', tone:'brown',
+      d:'A Leeds-focused rental platform built with Vue.js and Bootstrap — property search, listings, maps and live chat, plus a smart chatbot system powered by LangGraph, served on AWS/Nginx behind Cloudflare with GA4, GTM and conversion tracking.',
+      b:['Vue.js + Bootstrap UI with Swiper/Slick carousels','Smart chatbot system using LangGraph + Python','Google Maps, Cloudinary media and WhatsApp/Zendesk/Trengo chat','AWS, Nginx, Cloudflare CDN with GA4, Hotjar, Meta Pixel and GTM'],
+      s:['Vue.js','Bootstrap','LangGraph','Python','AWS','Cloudflare','Google Maps','Cloudinary'],
+      img:'assets/highlights/rentinc/1.jpg',
+      url:'https://www.rentinc.co.uk/' },
+    { cat:'Research · Deep Learning', t:'BMRF-Net', tag:'Research', tone:'brown',
       d:'Final-year research on referring segmentation: give the model a photo and a sentence such as "the woman holding the red umbrella", and it outlines exactly that object. Submitted for publication.',
       b:['Language and vision fused at several scales','Boundary-aware attention for crisp outlines','Supervised by Umar Ramzan, GIFT University'],
       s:['Python','Deep Learning','Computer Vision'] },
-    { cat:'Venture · eCommerce', t:'CraftyHubOfficial', tag:'Venture', tone:'teal',
-      d:'Founded and ran a craft brand of unique, personalised products for the Pakistani market, building entrepreneurship, creativity and business-development skills.',
-      b:['Original craft product concepts','Business and project management','International Women Entrepreneurship Certificate'],
-      s:['eCommerce','Branding','Social selling'] },
-    { cat:'Mobile App · Flutter', t:'CamoWild', tag:'Mobile App', tone:'brown',
-      d:'A cross-platform mobile app built in Flutter: one codebase for Android and iOS, from screen design and navigation to state management.',
-      b:['Single Flutter codebase for two platforms','Screen-by-screen UI design','State management and navigation'],
-      s:['Flutter','Dart'] },
-    { cat:'Mobile App · React Native', t:'Dinner Spinner', tag:'Mobile App', tone:'cream',
-      d:'A React Native app that settles the daily "what\'s for dinner?" question with a spin of the wheel.',
-      b:['Random meal picker for everyday use','Built in React Native','One codebase for Android and iOS'],
-      s:['React Native','JavaScript'] },
-    { cat:'Game · Unity 3D', t:'The Land of Shadows', tag:'Game', tone:'purple',
-      d:'An interactive Unity 3D game world built around light and shadow, with C# gameplay scripting and level design. A+ in Game Development.',
-      b:['C# gameplay scripting','Level design and lighting','3D scene and camera work'],
-      s:['Unity 3D','C#'] },
-    { cat:'Database · SQL', t:'Hotel Management System', tag:'Database', tone:'teal',
-      d:'A relational database for a hotel: schema design, normalisation and SQL behind rooms, guests, bookings and billing.',
-      b:['Normalised schema for rooms and guests','Bookings and billing in SQL','Database Management Systems project'],
-      s:['SQL','PHP','MySQL'] }
+    { cat:'Full Stack · eCommerce', t:'Forever', tag:'eCommerce', tone:'purple',
+      d:'An eCommerce brand storefront built on the MERN stack, with product browsing, cart and checkout flows, plus smart recommendation to surface products shoppers are more likely to buy.',
+      b:['Full MERN stack: MongoDB, Express, React and Node.js','Smart product recommendation across the catalogue','Responsive storefront for browsing, cart and checkout'],
+      s:['MERN','Smart Recommendation','MongoDB','Express','React','Node.js'],
+      img:'assets/projects/forever/images/1.png',
+      imgs:[
+        'assets/projects/forever/images/1.png',
+        'assets/projects/forever/images/2.png',
+        'assets/projects/forever/images/3.png',
+        'assets/projects/forever/images/4.png',
+        'assets/projects/forever/images/5.png',
+        'assets/projects/forever/images/6.png'
+      ] },
+    { cat:'Full Stack · Food Delivery', t:'Tomato', tag:'Food Delivery', tone:'teal',
+      d:'A food delivery platform with restaurant browsing, cart and live order flow — React on the front, Django APIs, and Firebase for auth and realtime updates.',
+      b:['React storefront for menus, cart and checkout','Django backend for restaurants, orders and delivery logic','Firebase auth and realtime order status'],
+      s:['React','Django','Firebase'],
+      img:'assets/projects/tomato/images/1.png',
+      imgs:[
+        'assets/projects/tomato/images/1.png',
+        'assets/projects/tomato/images/2.png',
+        'assets/projects/tomato/images/3.png'
+      ] }
   ],
 
   timeline: [
-    { when:'Apr 2026', tag:'Hackathon', t:'Harvard HSIL Hackathon', org:'Harvard T.H. Chan School of Public Health · Health Systems Innovation Lab', d:'Two days of collaborative problem-solving on health-systems challenges at GIFT University.' },
-    { when:'2025 – 2026', tag:'Research', t:'BMRF-Net research', org:'Final Year Project · GIFT University', d:'Deep-learning research on referring image segmentation, written up as a paper submitted for publication.' },
-    { when:'University years', tag:'Venture', t:'Founder, CraftyHubOfficial', org:'Creative craft venture', d:'Ran a craft brand of personalised products. Awarded an International Women Entrepreneurship Certificate.' },
-    { when:'2022 – 2026', tag:'Education', t:'BS (Hons) Computer Science', org:'GIFT University', d:'CGPA 3.35, rising to 3.77 in the final semester. A+ in Game Development and Digital Marketing.' },
-    { when:'2021', tag:'Education', t:'Intermediate, Pre-Medical', org:'Punjab College for Women', d:'Grade A+.' },
-    { when:'2019', tag:'Education', t:'Matriculation, Science', org:"The Educator's", d:'Grade A+.' }
+    { when:'Present', tag:'Entrepreneurship', t:'Region Design&IT', org:'Co-Founder & Software Developer', d:'Co-founded a software development and IT services company focused on delivering custom web, mobile, and business management solutions. Work directly with clients and lead projects from requirements gathering through development and deployment.' },
+    { when:'2025 – 2026', t:'Nexl Tech', org:'Agentic AI & Full-Stack Developer', d:'Worked full-time with a primary focus on Agentic AI development, designing and implementing intelligent AI-powered workflows and solutions. Also contributed to web and mobile applications, integrating AI into practical software products.' },
+    { when:'6-Month Internship', t:'NETSOL Technologies', org:'Software Developer Intern', d:'Worked on full-stack web application development, LLM integration and AI-related functionality, while gaining hands-on experience with the Software Development Life Cycle (SDLC) and professional software engineering practices.' }
   ],
 
   skills: [
-    { t:'eCommerce', icon:'store', tone:'purple', items:[['WordPress','W'],['WooCommerce','Wo'],['Shopify','S'],['Elementor','E'],['eBay','eb'],['Etsy','Et']] },
-    { t:'AI & Machine Learning', icon:'brain', tone:'teal', items:[['Python','Py'],['Claude','✺'],['ChatGPT','G'],['Gemini','✦'],['Copilot','Co'],['Hugging Face','HF']] },
-    { t:'Apps & Games', icon:'phone', tone:'brown', items:[['Flutter','F'],['Dart','D'],['React Native','⚛'],['Unity 3D','U'],['Firebase','Fb'],['Android Studio','As']] },
-    { t:'Web, Data & Design', icon:'code', tone:'cream', items:[['HTML','5'],['CSS','C'],['JavaScript','JS'],['PHP','php'],['MySQL','My'],['Figma','Fg']] }
+    { t:'AI & Agentic AI', icon:'brain', tone:'purple', items:[
+      ['Python','Py'],['LLMs','LLM'],['LangChain','Lc'],['LangGraph','Lg'],
+      ['AI Agents','Ag'],['Generative AI','Gen'],['LLM Integration','Int'],['AI Workflows','Wf']
+    ]},
+    { t:'Frontend Development', icon:'code', tone:'teal', items:[
+      ['React.js','⚛'],['JavaScript','JS'],['HTML5','5'],['CSS3','CSS'],['Tailwind CSS','Tw'],['Bootstrap','Bs']
+    ]},
+    { t:'Backend & APIs', icon:'boxes', tone:'brown', items:[
+      ['Node.js','N'],['Express.js','Ex'],['FastAPI','Fa'],['Django','Dj'],['PHP','php'],['REST APIs','API']
+    ]},
+    { t:'Mobile Development', icon:'phone', tone:'purple', items:[
+      ['React Native','RN'],['Expo','Ex'],['React Native CLI','CLI']
+    ]},
+    { t:'Databases & Backend Services', icon:'db', tone:'teal', items:[
+      ['MongoDB','Mg'],['SQL','SQL'],['Firebase','Fb'],['Redis','Re'],['SQLite','Lite'],['Supabase','Sb'],['Google Cloud','GC']
+    ]},
+    { t:'DevOps & Cloud', icon:'spark', tone:'brown', items:[
+      ['Docker','Dk'],['Git','Git'],['GitHub','GH'],['Google Cloud','GC']
+    ]}
   ],
 
   products: [
-    ['Aura Headphones','$149','New'],['Drift Runners','$89'],['Meridian Watch','$179'],
-    ['Transit Backpack','$69','-20%'],['No. 19 Eau de Parfum','$58'],['Daily Ritual Set','$34','New']
+    ['LangChain Agents','Hot','New'],['LangGraph Flows','Core'],['LLM Pipelines','Live'],
+    ['FastAPI Backends','API'],['React Native Apps','Mobile'],['Docker Deploy','Cloud']
   ]
 };
