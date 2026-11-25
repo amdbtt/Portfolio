@@ -9,7 +9,28 @@ window.DATA = {
   marquee: ['Python','LangChain','LangGraph','React','TypeScript','Node.js','Next.js','FastAPI','PostgreSQL','Docker','AWS','React Native'],
 
   tech: [
-    ['W','sq'],['Woo','sq'],['S','sq'],['E','sf'],['ebay','sf'],['php','sq'],['SQL','sq'],['JS','sq'],['5','sq'],['CSS','sq'],['⚛','sf'],['Py','sq'],['F','sq'],['C#','sq'],['Fig','sq']
+    ['Python','assets/tech/python.svg'],
+    ['LangChain','assets/tech/langchain.svg'],
+    ['React','assets/tech/react.svg'],
+    ['JavaScript','assets/tech/javascript.svg'],
+    ['TypeScript','assets/tech/typescript.svg'],
+    ['Node.js','assets/tech/nodejs.svg'],
+    ['Next.js','assets/tech/nextjs.svg'],
+    ['FastAPI','assets/tech/fastapi.svg'],
+    ['Django','assets/tech/django.svg'],
+    ['PHP','assets/tech/php.svg'],
+    ['HTML5','assets/tech/html5.svg'],
+    ['CSS','assets/tech/css.svg'],
+    ['Tailwind CSS','assets/tech/tailwind.svg'],
+    ['Bootstrap','assets/tech/bootstrap.svg'],
+    ['MongoDB','assets/tech/mongodb.svg'],
+    ['PostgreSQL','assets/tech/postgresql.svg'],
+    ['Firebase','assets/tech/firebase.svg'],
+    ['Redis','assets/tech/redis.svg'],
+    ['Docker','assets/tech/docker.svg'],
+    ['Git','assets/tech/git.svg'],
+    ['AWS','assets/tech/aws.svg'],
+    ['Google Cloud','assets/tech/gcp.svg']
   ],
 
   icons: {

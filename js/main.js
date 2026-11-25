@@ -61,7 +61,7 @@
   $('#mTrack').innerHTML = mItems + mItems;
 
   // tech strip
-  const tItems = D.tech.map(([t, c]) => `<span class="${c}">${t}</span>`).join('');
+  const tItems = D.tech.map(([n, src]) => `<span class="logo"><img src="${src}" alt="${esc(n)}"></span>`).join('');
   $('#tTrack').innerHTML = tItems + tItems;
 
   // capability cards (AI / full-stack mock)
