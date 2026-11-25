@@ -54,32 +54,24 @@
       };
     }
 
-    function makeFallbackImage(w, h) {
-      const g = p.createGraphics(w, h);
-      g.background(20);
-      g.noStroke();
-      for (let i = 0; i < 80; i++) {
-        g.fill(p.random(40, 220), 40);
-        g.ellipse(p.random(w), p.random(h), p.random(40, 220));
-      }
-      g.filter(p.BLUR, 8);
-      return g.get();
-    }
-
     function processImage() {
       if (!originalImg || p.width < 2 || p.height < 2) return;
       img = originalImg.get();
-      img.resize(p.width, p.height);
+      /* Keep the sample small so the first photo swap doesn't freeze the door. */
+      const cap = COARSE ? 280 : 420;
+      const scale = Math.min(p.width / img.width, p.height / img.height, cap / Math.max(img.width, img.height));
+      img.resize(Math.max(2, Math.round(img.width * scale)), Math.max(2, Math.round(img.height * scale)));
       img.filter(p.GRAY);
       if (CFG.invertImage) {
         img.loadPixels();
-        for (let i = 0; i < img.pixels.length; i += 4) {
-          img.pixels[i] = 255 - img.pixels[i];
-          img.pixels[i + 1] = 255 - img.pixels[i + 1];
-          img.pixels[i + 2] = 255 - img.pixels[i + 2];
+        const px = img.pixels;
+        for (let i = 0; i < px.length; i += 4) {
+          const v = 255 - px[i];
+          px[i] = px[i + 1] = px[i + 2] = v;
         }
         img.updatePixels();
       }
+      img.loadPixels();
     }
 
     function readField() {
@@ -102,17 +94,32 @@
       p.pop();
     }
 
+    /* Dots are on screen before any photo work. Brightness is stored on the point. */
     function generatePoints() {
-      if (!img) return;
       points = [];
       const step = Math.max(3, CFG.spacing);
-      for (let y = 0; y < img.height; y += step) {
-        for (let x = 0; x < img.width; x += step) {
-          if (p.random() > CFG.density) continue;
+      const keep = Math.min(CFG.density, 0.85);
+      const useImg = !!(img && img.pixels && img.pixels.length);
+      const iw = useImg ? img.width : 0;
+      const ih = useImg ? img.height : 0;
+      for (let y = step; y < p.height; y += step) {
+        for (let x = step; x < p.width; x += step) {
+          if (p.random() > keep) continue;
+          let brightness = 80 + ((x * 5 + y * 3) % 140);
+          if (useImg) {
+            const px = Math.min(iw - 1, (x * iw / p.width) | 0);
+            const py = Math.min(ih - 1, (y * ih / p.height) | 0);
+            const v = img.pixels[(px + py * iw) * 4];
+            if (v === undefined) continue;
+            const show = CFG.invertWireframe ? v < CFG.threshold : v > CFG.threshold;
+            if (!show) continue;
+            brightness = v;
+          }
           points.push({
             pos: p.createVector(x, y),
             originalPos: p.createVector(x, y),
-            vel: p.createVector(0, 0)
+            vel: p.createVector(0, 0),
+            brightness
           });
         }
       }
@@ -151,12 +158,12 @@
     }
 
     function rebuild() {
-      processImage();
+      if (originalImg) processImage();
       generatePalette();
       generatePoints();
       magnifierX = p.width / 2;
       magnifierY = p.height / 2;
-      ready = !!img;
+      ready = points.length > 0;
     }
 
     p.setup = () => {
@@ -165,17 +172,14 @@
       lastW = w;
       lastH = h;
       p.pixelDensity(1);
-      p.frameRate(COARSE ? 30 : 60);   // keep phones cool
+      p.frameRate(COARSE ? 30 : 60);
 
-      originalImg = makeFallbackImage(Math.max(w, 640), Math.max(h, 360));
+      /* Paint the field on the first frame. The photo only refines it later. */
       rebuild();
-      p.loadImage(
-        IMAGE_URL,
-        (loaded) => {
-          originalImg = loaded;
-          rebuild();
-        }
-      );
+      p.loadImage(IMAGE_URL, (loaded) => {
+        originalImg = loaded;
+        rebuild();
+      });
     };
 
     p.windowResized = () => {
@@ -185,7 +189,7 @@
       lastW = w;
       lastH = h;
       p.resizeCanvas(w, h);
-      if (originalImg) rebuild();
+      rebuild();
     };
 
     p.draw = () => {
@@ -201,7 +205,7 @@
       const fieldBg = readField();
       if (!palette.length || prevHue !== CFG.hue || prevSat !== CFG.saturation) generatePalette();
 
-      if (!ready || !img) {
+      if (!ready) {
         p.background(fieldBg);
         syncMirror();
         return;
@@ -213,20 +217,13 @@
       magnifierY = p.lerp(magnifierY, pointerY, 0.12);
       applyForceField(magnifierX, magnifierY);
 
-      img.loadPixels();
       p.noFill();
 
       for (const pt of points) {
         const x = pt.pos.x;
         const y = pt.pos.y;
         const d = p.dist(x, y, magnifierX, magnifierY);
-        const px = p.constrain(p.floor(x), 0, img.width - 1);
-        const py = p.constrain(p.floor(y), 0, img.height - 1);
-        const brightness = img.pixels[(px + py * img.width) * 4];
-        if (brightness === undefined) continue;
-
-        const show = CFG.invertWireframe ? brightness < CFG.threshold : brightness > CFG.threshold;
-        if (!show) continue;
+        const brightness = pt.brightness;
 
         const shadeIndex = p.constrain(Math.floor(p.map(brightness, 0, 255, 0, palette.length - 1)), 0, palette.length - 1);
         let strokeSize = p.map(brightness, 0, 255, CFG.minStroke, CFG.maxStroke);

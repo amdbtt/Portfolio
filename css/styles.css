@@ -172,7 +172,7 @@ h2{font:600 clamp(36px,4.9vw,68px)/1.02 var(--sans);letter-spacing:-.045em;margi
 /* door pair – slide outward L/R; force field rides on each panel */
 .gate{position:absolute;inset:0;z-index:20;display:grid;place-items:center;pointer-events:auto}
 .stage.is-open .gate{pointer-events:none}
-.gate-door{position:absolute;top:0;bottom:0;width:50%;z-index:1;overflow:hidden;will-change:transform;background:var(--chrome-door);pointer-events:none}
+.gate-door{position:absolute;top:0;bottom:0;width:50%;z-index:1;overflow:hidden;will-change:transform;background-color:var(--chrome-door);background-image:radial-gradient(circle,rgba(255,255,255,.7) 1.15px,transparent 1.35px);background-size:14px 14px;pointer-events:none}
 .gate-door--l{left:0;transform:translate3d(calc(var(--open) * -100%),0,0);box-shadow:inset -1px 0 0 rgba(255,255,255,.06)}
 .gate-door--r{right:0;transform:translate3d(calc(var(--open) * 100%),0,0);box-shadow:inset 1px 0 0 rgba(255,255,255,.06)}
 .gate-fx,.gate-fx-mirror{position:absolute;top:0;left:0;height:100%;width:100%;max-width:none}
