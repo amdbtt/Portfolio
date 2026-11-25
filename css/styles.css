@@ -175,9 +175,9 @@ h2{font:600 clamp(36px,4.9vw,68px)/1.02 var(--sans);letter-spacing:-.045em;margi
 .gate-door{position:absolute;top:0;bottom:0;width:50%;z-index:1;overflow:hidden;will-change:transform;background:var(--chrome-door);pointer-events:none}
 .gate-door--l{left:0;transform:translate3d(calc(var(--open) * -100%),0,0);box-shadow:inset -1px 0 0 rgba(255,255,255,.06)}
 .gate-door--r{right:0;transform:translate3d(calc(var(--open) * 100%),0,0);box-shadow:inset 1px 0 0 rgba(255,255,255,.06)}
-.gate-fx,.gate-fx-mirror{position:absolute;top:0;height:100%;width:100vw;max-width:none}
-.gate-door--l .gate-fx{left:0}
-.gate-door--r .gate-fx-mirror{right:0;left:auto;display:block}
+.gate-fx,.gate-fx-mirror{position:absolute;top:0;left:0;height:100%;width:100%;max-width:none}
+.gate-door--l .gate-fx{width:200%}
+.gate-door--r .gate-fx-mirror{display:block;width:100%;height:100%}
 .gate-fx canvas{display:block;width:100%!important;height:100%!important}
 .gate-center{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:18px;padding:0 24px;text-align:center;pointer-events:auto;cursor:pointer;
   opacity:calc(1 - var(--open) * .95);will-change:opacity}
@@ -380,10 +380,10 @@ h1 em{color:var(--hero-em);font-size:1.08em}
 .syncing{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--green)}
 .syncing i{font-style:normal;display:inline-block;animation:spin 2.2s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;max-width:1240px;margin:84px auto 0;text-align:left}
-.step{position:relative;display:flex;align-items:baseline;gap:14px;padding-top:22px;color:var(--dim);transition:color .4s;text-align:left}
-.step::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--line)}
-.step .bar{position:absolute;left:0;top:0;height:2px;width:0;background:var(--violet)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;max-width:1240px;margin:84px auto 0;text-align:left;width:100%;min-width:0}
+.step{position:relative;display:flex;align-items:baseline;gap:14px;width:100%;min-width:0;max-width:100%;padding-top:22px;color:var(--dim);transition:color .4s;text-align:left;overflow:hidden}
+.step .track{position:absolute;left:0;right:0;top:0;height:2px;background:var(--line);overflow:hidden}
+.step .bar{position:absolute;left:0;top:0;height:100%;width:0;background:var(--violet)}
 [data-theme="light"] .step .bar{background:linear-gradient(90deg,var(--violet),var(--blue))}
 .step em{color:var(--violet);opacity:.7;font-size:26px;line-height:1}
 .step b{font:500 19px/1 var(--body);letter-spacing:-.01em}
@@ -999,6 +999,7 @@ img,video{max-width:100%}
 
 /* Stops sideways page-wiggle on phones (rotated marquee, letter fly-in…).
    `clip` does NOT create a scroll container, so position:sticky keeps working. */
+html,body{max-width:100%;overflow-x:clip}
 main{overflow-x:clip}
 
 /* stage height uses svh so the hero fits when the mobile URL bar shows/hides */
@@ -1149,7 +1150,7 @@ main{overflow-x:clip}
   .scroll{display:none}
 
   /* ----- marquee ----- */
-  .marquee{margin:0 -4%;padding:14px 0;transform:rotate(-1.5deg)}
+  .marquee{margin:0;width:100%;padding:14px 0;transform:rotate(-1.5deg)}
   .m-track{gap:22px;animation-duration:28s}
   .m-track span{font-size:clamp(22px,6.4vw,30px)}
   .m-track span.s{font-size:clamp(25px,7vw,34px)}
@@ -1194,7 +1195,7 @@ main{overflow-x:clip}
   .chs{gap:8px}
   .chs span{padding:8px 12px;font-size:12px}
 
-  .steps{grid-template-columns:1fr;gap:4px;margin-top:30px}
+  .steps{grid-template-columns:minmax(0,1fr);gap:4px;margin-top:30px;width:100%}
   .step{padding-top:16px;padding-bottom:12px;gap:12px}
   .step em{font-size:22px}
   .step b{font-size:16px}

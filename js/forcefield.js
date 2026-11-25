@@ -136,13 +136,18 @@
 
     function syncMirror() {
       if (!mirror || !p.canvas) return;
+      const door = mirror.parentElement;
+      const w = Math.max(1, door ? door.clientWidth : Math.floor(p.width / 2));
+      const h = Math.max(1, door ? door.clientHeight : p.height);
       if (!mirrorCtx) mirrorCtx = mirror.getContext('2d');
-      if (mirror.width !== p.width || mirror.height !== p.height) {
-        mirror.width = p.width;
-        mirror.height = p.height;
+      if (mirror.width !== w || mirror.height !== h) {
+        mirror.width = w;
+        mirror.height = h;
       }
-      mirrorCtx.clearRect(0, 0, mirror.width, mirror.height);
-      mirrorCtx.drawImage(p.canvas, 0, 0);
+      mirrorCtx.clearRect(0, 0, w, h);
+      // Right door is only half the screen — copy the right half, no negative offset
+      // (iOS drops a canvas that is shifted outside an overflow-hidden transformed door).
+      mirrorCtx.drawImage(p.canvas, p.width / 2, 0, p.width / 2, p.height, 0, 0, w, h);
     }
 
     function rebuild() {
@@ -162,14 +167,12 @@
       p.pixelDensity(1);
       p.frameRate(COARSE ? 30 : 60);   // keep phones cool
 
+      originalImg = makeFallbackImage(Math.max(w, 640), Math.max(h, 360));
+      rebuild();
       p.loadImage(
         IMAGE_URL,
         (loaded) => {
           originalImg = loaded;
-          rebuild();
-        },
-        () => {
-          originalImg = makeFallbackImage(Math.max(w, 640), Math.max(h, 360));
           rebuild();
         }
       );
